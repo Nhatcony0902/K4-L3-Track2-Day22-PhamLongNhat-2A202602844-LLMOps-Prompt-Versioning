@@ -52,6 +52,11 @@ LANGSMITH_API_KEY = os.getenv("LANGCHAIN_API_KEY", "")
 LANGSMITH_PROJECT = os.getenv("LANGCHAIN_PROJECT", "day22-lab")
 
 
+def _is_set(value: str) -> bool:
+    """Key được coi là đã cấu hình nếu không rỗng và không phải placeholder của .env.example."""
+    return bool(value) and not value.startswith("your_")
+
+
 def validate() -> bool:
     """
     Kiểm tra các biến môi trường bắt buộc đã được cấu hình.
@@ -59,16 +64,16 @@ def validate() -> bool:
     """
     missing = []
 
-    if not LANGSMITH_API_KEY:
+    if not _is_set(LANGSMITH_API_KEY):
         missing.append("LANGCHAIN_API_KEY (LangSmith)")
 
-    if PROVIDER == "openai" and not OPENAI_API_KEY:
+    if PROVIDER == "openai" and not _is_set(OPENAI_API_KEY):
         missing.append("OPENAI_API_KEY")
-    elif PROVIDER == "gemini" and not GOOGLE_API_KEY:
+    elif PROVIDER == "gemini" and not _is_set(GOOGLE_API_KEY):
         missing.append("GOOGLE_API_KEY")
-    elif PROVIDER == "anthropic" and not ANTHROPIC_API_KEY:
+    elif PROVIDER == "anthropic" and not _is_set(ANTHROPIC_API_KEY):
         missing.append("ANTHROPIC_API_KEY")
-    elif PROVIDER == "openrouter" and not OPENROUTER_API_KEY:
+    elif PROVIDER == "openrouter" and not _is_set(OPENROUTER_API_KEY):
         missing.append("OPENROUTER_API_KEY")
     # Ollama: không cần API key
 

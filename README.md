@@ -1,3 +1,13 @@
+## 📮 Bài nộp — Phạm Long Nhật (2A202602844)
+
+| | |
+|---|---|
+| LangSmith project | [day22-lab](https://smith.langchain.com/o/5de99c93-ae1b-40bb-946a-66b8a8d772c4/projects/p/d05b0c3c-0683-4b6d-b7bb-7807ebc9aaeb) |
+| Evidence & phân tích V1 vs V2 | [evidence/README.md](evidence/README.md) |
+| RAGAS faithfulness | V1 0.9710 · V2 0.9518 |
+
+---
+
 > **📌 Hình thức: BÀI CÁ NHÂN** — mỗi học viên tự làm và tự nộp 1 repo theo quy ước đặt tên.
 > **⏰ Thời lượng:** ~3–4 giờ · **Deadline:** 23:59 ngày học lab (GMT+7)
 >

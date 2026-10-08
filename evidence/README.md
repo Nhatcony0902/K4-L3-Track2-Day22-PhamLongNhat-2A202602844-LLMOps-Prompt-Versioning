@@ -1,7 +1,7 @@
 # Evidence — Day 22: LangSmith + Prompt Versioning
 
 **Học viên:** Phạm Long Nhật — 2A202602844
-**Provider:** OpenAI `gpt-4o-mini` + `text-embedding-3-small` · **LangSmith project:** `day22-lab`
+**Provider:** OpenAI `gpt-4o-mini` + `text-embedding-3-small` · **LangSmith project:** [`day22-lab`](https://smith.langchain.com/o/5de99c93-ae1b-40bb-946a-66b8a8d772c4/projects/p/d05b0c3c-0683-4b6d-b7bb-7807ebc9aaeb)
 
 ## Danh sách tệp
 

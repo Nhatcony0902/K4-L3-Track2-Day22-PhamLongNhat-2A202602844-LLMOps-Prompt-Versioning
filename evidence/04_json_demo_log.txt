@@ -1,0 +1,58 @@
+=======================================================
+  Bước 4: Guardrails AI Validators
+=======================================================
+
+=======================================================
+  Demo: JSON Formatting & Repair
+=======================================================
+
+[Valid JSON]
+  Status: ✅ Hợp lệ sẵn (validation_passed=True)
+  Input:  '{"name": "Alice", "age": 30}'
+  Output: {"name": "Alice", "age": 30}
+
+[Markdown fences]
+  🔧 JSON đã được sửa thành công
+  Status: 🔧 Đã sửa (validation_passed=True)
+  Input:  '```json\n{"name": "Bob"}\n```'
+  Output: {
+  "name": "Bob"
+}
+
+[Single quotes]
+  🔧 JSON đã được sửa thành công
+  Status: 🔧 Đã sửa (validation_passed=True)
+  Input:  "{'name': 'Charlie', 'score': 95}"
+  Output: {
+  "name": "Charlie",
+  "score": 95
+}
+
+[Trailing comma]
+  🔧 JSON đã được sửa thành công
+  Status: 🔧 Đã sửa (validation_passed=True)
+  Input:  '{"key": "value",}'
+  Output: {
+  "key": "value"
+}
+
+[Combined errors]
+  🔧 JSON đã được sửa thành công
+  Status: 🔧 Đã sửa (validation_passed=True)
+  Input:  "```json\n{'items': [1, 2, 3,], 'ok': true,}\n```"
+  Output: {
+  "items": [
+    1,
+    2,
+    3
+  ],
+  "ok": true
+}
+
+[Truly invalid]
+  ❌ Không sửa được JSON (Expecting value) → trả về JSON dự phòng
+  Status: ⚠️  Fallback (validation_passed=True)
+  Input:  'This is not JSON at all: ??? {]'
+  Output: {"error": "Không thể phân tích JSON", "raw": "This is not JSON at all: ??? {]"}
+
+✅ Bước 4 hoàn thành!

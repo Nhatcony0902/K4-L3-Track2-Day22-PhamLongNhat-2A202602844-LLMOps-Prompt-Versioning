@@ -1,0 +1,20 @@
+{
+  "provider": "openai",
+  "num_samples": {
+    "v1": 50,
+    "v2": 50
+  },
+  "prompt_v1_scores": {
+    "faithfulness": 0.9710303030303031,
+    "answer_relevancy": 0.9184378678156649,
+    "context_recall": 1.0,
+    "context_precision": 0.9383333332619168
+  },
+  "prompt_v2_scores": {
+    "faithfulness": 0.9517821067821067,
+    "answer_relevancy": 0.892901108350031,
+    "context_recall": 1.0,
+    "context_precision": 0.9416666665940835
+  },
+  "target_met": true
+}
